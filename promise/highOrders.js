@@ -18,6 +18,7 @@ function isType (type) {
 let isString = utils.isString('hello')//true
 let isObject = utils.isObject([])//false Array型
 let isArray = utils.isArray([])//true 
+let isArray = utils.isBollen(false)//true 
 console.log(isString)
 console.log(isObject)
 console.log(isArray)
