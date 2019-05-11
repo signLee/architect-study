@@ -1,7 +1,7 @@
 // 高阶函数---判断数据类型
 
 let utils = {}
-let type = ['String','Object','Null','Function','Array','Boolen']
+let type = ['String','Object','Null','Function','Array','Boolean']
 
 type.forEach((item)=>{
     utils[`is`+item] = isType(item)
@@ -18,7 +18,8 @@ function isType (type) {
 let isString = utils.isString('hello')//true
 let isObject = utils.isObject([])//false Array型
 let isArray = utils.isArray([])//true 
-let isBollen = utils.isBollen(false)//true 
+let isBoolean = utils.isBoolean(false)//true 
 console.log(isString)
 console.log(isObject)
 console.log(isArray)
+console.log(isBoolean)
