@@ -86,7 +86,55 @@ class Promise {
         })
         return promise2
     }
+    // catch只捕获错误
+    catch(fn){
+        return this.then(null,fn)
+    }
 } 
+
+Promise.resolve = (data)=> {
+    return new Promise((resolve,reject)=>{
+        resolve(data)
+    })
+}
+
+Promise.reject = (data)=> {
+    return new Promise((resolve,reject)=>{
+        reject(data)
+    })
+}
+
+/*
+all方法 将出入的所有的promise执行，只要有一个报错就执行reject，如果全部执行成功，
+则返回一个存储所有成功返回数据的数组
+*/
+Promise.all = (promises)=>{
+    return new Promise((resolve,reject)=>{
+        let result = []
+        let index = 0
+        let processData = (key,y)=>{
+            index++
+            result[key] = y
+            if(index===promises.lenght){
+                resolve(result)
+            }
+        }
+        for(let i = 0; i < promises.lenght; i++){
+            promises[i].then(y=>{
+                processData(i,y)
+            },reject)
+        }
+    })
+}
+
+//race 有一个成功就行
+Promise.rece= (promises)=> {
+    return new Promise((resolve,reject)=>{
+        for(let i = 0; i < promises.lenght; i++){
+            promises[i].then(resolve,reject)
+        }
+    })
+}
 
 //根据promise执行后的返回值做处理
 function reslovePromise(promise2,x,resolve,reject){
