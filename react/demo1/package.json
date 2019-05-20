@@ -80,7 +80,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
+      "src/**/*.{js,jsx,ts,tsx}", 
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
@@ -127,5 +127,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy":"https://www.baidu.com/ api请求代理的地址"
 }
