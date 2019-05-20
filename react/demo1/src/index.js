@@ -17,28 +17,7 @@ import ReactDOM from 'react-dom';
  CALLBACK   把JSX渲染到容器后执行的回调
 */
 
-/* 
-    JSX渲染原理
-        1.基于babel中的babel-preset-react把jsx编译为Rect.createElement(...)的模式
-            至少有两个参数
-            没一个标签都会变成对应的createElement
-            React.createElement(
-                元素的标签名,
-                标签的属性集合[对象]，没有属性就是null,
-                第三个及以后根据子节点的个数来决定
-            )
-        2.基于createElement生成一个JSX对象（虚拟DOM）
-                生成一个对象
-                {
-                    type:'标签名',
-                    props:{
-                        className:"xxx",
-                        style:{},
-                        children:可能是一个数组、字符串、或者可能没有children(没有子节点)
-                    }
-                }
-        3.ReactDOM.render(JSX对象，...)，基于RENDER把JSX对象渲染成为真实的DOM
-*/
+
 let data=[{
     name:'sign',
     age:25
