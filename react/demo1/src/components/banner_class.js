@@ -7,10 +7,10 @@ import propTypes from "prop-types"
 //不做特殊处理之前，在constructor中的this是没有props属性的，但是到render等生命周期函授的时候就挂载了
 //React.Component 和React.pureComponent的区别：pureComponent在功能上和Component是一样的，但是它主要用于一些静态展示的组件，可用来提升性能
 export default class Banner extends React.Component {
-  //设置默认值
-  // static defaultProps={
-  //     interval:3000
-  // }
+  //   设置默认值
+  static defaultProps = {
+    interval: 3000
+  }
   // 设置传递属性值的规则 需要安装依赖 prop-types
   static propTypes = {
     interval: propTypes.number.isRequired
