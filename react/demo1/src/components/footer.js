@@ -7,10 +7,23 @@ export default class Footer extends React.Component {
     super(props)
   }
   render() {
+    let { addOne } = this.props
     return (
       <div className="footer">
-        <button>支持</button>
-        <button>反对</button>
+        <button
+          onClick={() => {
+            addOne("add")
+          }}
+        >
+          支持
+        </button>
+        <button
+          onClick={() => {
+            addOne("reduce")
+          }}
+        >
+          反对
+        </button>
       </div>
     )
   }
