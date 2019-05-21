@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react"
+import ReactDOM from "react-dom"
 
 /*
  把jsx虚拟DOM元素渲染到页面中（真实的DOM）
@@ -17,24 +17,30 @@ import ReactDOM from 'react-dom';
  CALLBACK   把JSX渲染到容器后执行的回调
 */
 
-
-let data=[{
-    name:'sign',
-    age:25
-},{
-    name:'zero',
-    age:26
-}]
+let data = [
+  {
+    name: "sign",
+    age: 25
+  },
+  {
+    name: "zero",
+    age: 26
+  }
+]
 
 ReactDOM.render(
-<div>
-    <h1 className='test'>测试</h1>
-    <h1 style={{marginRight: 2 + 'em'}}>测试</h1>
+  <div>
+    <h1 className="test">测试</h1>
+    <h1 style={{ marginRight: 2 + "em" }}>测试</h1>
     <ul>
-        {data.map((item,index)=>{
-            let {name,age} = item
-            return <li key={index}>{name+age}</li>
-        })}
+      {data.map((item, index) => {
+        let { name, age } = item
+        return <li key={index}>{name + age}</li>
+      })}
     </ul>
-</div>
-,document.querySelector("#root"),()=>{console.log("添加成功")})
+  </div>,
+  document.querySelector("#root"),
+  () => {
+    console.log("添加成功")
+  }
+)
