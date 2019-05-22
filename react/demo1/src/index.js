@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Vote from "./components/vote"
+import Vote from "./components/vote.1"
 
 ReactDOM.render(
   <div>
