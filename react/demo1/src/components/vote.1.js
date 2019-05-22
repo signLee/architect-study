@@ -16,7 +16,6 @@ export default class Vote extends React.Component {
   static childContextTypes = {
     n: propTypes.number,
     m: propTypes.number,
-    test: propTypes.number,
     addOne: propTypes.func
   }
   getChildContext() {
@@ -24,7 +23,6 @@ export default class Vote extends React.Component {
     return {
       n: this.state.n,
       m: this.state.m,
-      test: this.state.test,
       addOne: this.addOne
     }
   }
