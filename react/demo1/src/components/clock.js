@@ -4,6 +4,7 @@ import React from "react"
 export default class Banner extends React.Component {
   constructor(props) {
     super(props) //React.Component.call(this,props)
+    //这里是定死了的只能有state
     this.state = {
       time: new Date().toLocaleString()
     }

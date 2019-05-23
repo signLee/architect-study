@@ -14,12 +14,13 @@ import Body from "./body"
 export default class Vote extends React.Component {
   constructor(props) {
     super(props)
+    //这里的名字只能是state是定死的
     this.state = {
       n: 1,
       m: 0
     }
   }
-  //  这里定义的方法都挂在类的原型上了所以调用的时候要用this.addOne的方式调用
+  //  这里定义的方法挂在类的实例上而不是原型，调用的时候要用this.addOne的方式调用
   addOne = type => {
     if (type === "add") {
       this.setState({ n: this.state.n + 1 })
