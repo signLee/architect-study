@@ -16,4 +16,6 @@
                     通过属性方式传值
                     通过context方式传值
                 setState
+                    setState原理
+                    实现一个自己的setState
                 ref
