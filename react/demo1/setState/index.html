@@ -13,7 +13,7 @@
     <script src="index.js"></script>
     <script>
       let countApp = document.querySelector("#count-app")
-      countApp.appendChild(new Counter().render())
+      new Counter({ name: "sign" }).mount(countApp)
     </script>
   </body>
 </html>
