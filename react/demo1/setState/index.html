@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>setState 原理</title>
+  </head>
+  <body>
+    <div id="count-app"></div>
+    <script src="index.js"></script>
+    <script>
+      let countApp = document.querySelector("#count-app")
+      countApp.appendChild(new Counter().render())
+    </script>
+  </body>
+</html>
