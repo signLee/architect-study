@@ -1,3 +1,13 @@
+class Transaction {
+  constructor(wrapper) {
+    this.wrapper = wrapper
+  }
+  perform(anyMethod) {
+    this.wrapper.forEach(wrapper => wrapper.initialize())
+    anyMethod.call()
+    this.wrapper.forEach(wrapper => wrapper.close())
+  }
+}
 let batchingStrategy = {
   isBatchingUpdates: false, //默认为非批量更新模式
   dirtyComponents: [],
@@ -52,11 +62,21 @@ class myComponent {
     container.appendChild(this.renderElement())
   }
 }
+
+let transaction = new Transaction([
+  {
+    initialize() {
+      batchingStrategy.isBatchingUpdates = true
+    },
+    close() {
+      batchingStrategy.isBatchingUpdates = false
+      batchingStrategy.batchedUpdates() //把所有脏组件批量更新
+    }
+  }
+])
 window.trigger = (ev, method) => {
-  batchingStrategy.isBatchingUpdates = true
-  ev.target.component[method].call(ev.target.component, ev)
-  batchingStrategy.isBatchingUpdates = false
-  batchingStrategy.batchedUpdates() //把所有脏组件批量更新
+  let component = ev.target.component
+  transaction.perform(component[method].bind(component, ev))
 }
 //定义一个Counter继承父类myComponent的属性和方法
 class Counter extends myComponent {
