@@ -1,3 +1,4 @@
+// 事务包装
 function setState() {
   console.log("setState")
 }
@@ -14,19 +15,24 @@ class Transaction {
 let transaction = new Transaction([
   {
     initialize() {
-      console.log("initialize")
+      console.log("initialize1")
     },
     close() {
-      console.log("close")
+      console.log("close1")
     }
   },
   {
     initialize() {
-      console.log("initialize")
+      console.log("initialize2")
     },
     close() {
-      console.log("close")
+      console.log("close2")
     }
   }
 ])
 transaction.perform(setState)
+// initialize1
+// initialize2
+// setState
+// close1
+// close2
