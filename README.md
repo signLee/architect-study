@@ -20,3 +20,4 @@
                     实现一个自己的setState
                     事务包装
                 ref
+        3.ES6 class
