@@ -20,4 +20,7 @@
                     实现一个自己的setState
                     事务包装
                 ref
+                钩子函数
+                context_老版本
+                prop-types使用
         3.ES6 class
