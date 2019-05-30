@@ -31,7 +31,7 @@ class Page extends Component {
     }
   }
   setColor = color => {
-    this.setState({ color })
+    this.setState({ color: color })
   }
 
   render() {
@@ -100,9 +100,23 @@ class Main extends Component {
   }
 }
 class Content extends Component {
+  static contextTypes = {
+    color: PropTypes.string,
+    setColor: PropTypes.func
+  }
   render() {
     return (
-      <div style={{ border: "5px solid yellow", padding: "5px" }}>Content</div>
+      <div
+        style={{
+          border: "5px solid yellow",
+          padding: "5px",
+          color: this.context.color
+        }}
+      >
+        Content1
+        <button onClick={() => this.context.setColor("green")}>green</button>
+        <button onClick={() => this.context.setColor("red")}>red</button>
+      </div>
     )
   }
 }

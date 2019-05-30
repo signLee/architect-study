@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import ContextOld from "./components/contextOld"
+import ContextNew from "./components/contextNew"
 
 ReactDOM.render(
   <>
-    <ContextOld />
+    <ContextNew />
   </>,
   document.querySelector("#root")
 )
