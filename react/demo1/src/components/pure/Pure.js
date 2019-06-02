@@ -48,4 +48,19 @@ class APP extends PureComponent {
   }
 }
 
+//函数式组件实现方式
+// function TitleStatic(props) {
+//   return <div>{props.title}</div>
+// }
+// TitleStatic = React.memo(TitleStatic)
+
+// //实现一个自己的memo
+// function memo(FunctionComponent) {
+//   return class extends PureComponent {
+//     render() {
+//       return <FunctionComponent {...this.props} />
+//       //   return FunctionComponent(this.props)//这种也可以
+//     }
+//   }
+// }
 export default APP
