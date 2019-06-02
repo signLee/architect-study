@@ -24,4 +24,5 @@
                 context_老版本
                 context_新版ThemeContext
                 prop-types使用
+                pureComponents实现原理
         3.ES6 class

@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import ContextNew from "./components/contextNew"
+import Pure from "./components/pure/Pure"
 
 ReactDOM.render(
   <>
-    <ContextNew />
+    <Pure />
   </>,
   document.querySelector("#root")
 )
