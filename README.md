@@ -25,4 +25,5 @@
                 context_新版ThemeContext
                 prop-types使用
                 pureComponents实现原理
+                高阶函数&高阶组件
         3.ES6 class
