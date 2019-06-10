@@ -1,0 +1,28 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.content {
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoom 0.6s;
+}

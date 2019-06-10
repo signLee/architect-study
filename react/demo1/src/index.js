@@ -1,12 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import UserNameInput from "./components/high/UserNameInput"
-import EmailInput from "./components/high/EmailInput"
+import Modal from "./components/Modal"
 
 ReactDOM.render(
   <>
-    <UserNameInput />
-    <EmailInput />
+    <Modal />
   </>,
   document.querySelector("#root")
 )
