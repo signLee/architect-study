@@ -1,4 +1,4 @@
-// Portal
+// Portal   createPortal适用于将节点挂载到root(正常所有组件都挂载在root下)以外的节点的情况
 import React, { Component } from "react"
 import ReactDom from "react-dom"
 import "./modal.css"
