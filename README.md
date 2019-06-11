@@ -29,3 +29,4 @@
                 Portal
                 错误边界Error Boundaries
         3.ES6 class
+        4.redux&实现原理
