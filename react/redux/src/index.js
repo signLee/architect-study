@@ -1,3 +1,4 @@
+//redux执行流程：在createStore执行（入参为action回调、类似于vuex中的actions）后会返回getState（类似于vuex中的getters）,subscribe(订阅者类似于vuex中的computed),dispatch（类似于vuex中的mapMutation）
 import { createStore } from "./redux"
 
 let initState = 0
@@ -20,11 +21,12 @@ let counterValue = document.getElementById("counter-value")
 let increcement = document.getElementById("increcement")
 let decrecement = document.getElementById("decrecement")
 
+//订阅数据变更后的回调函数
 function render() {
   counterValue.innerHTML = store.getState() //获取state的值
 }
 render()
-store.subscribe(render) //订阅
+store.subscribe(render) //订阅数据更新并传入回调函数
 
 increcement.addEventListener("click", function() {
   store.dispatch({
