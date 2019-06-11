@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Modal from "./components/Modal"
+import ErrorBoundary from "./components/ErrorBoundary"
 
 ReactDOM.render(
   <>
-    <Modal />
+    <ErrorBoundary />
   </>,
   document.querySelector("#root")
 )

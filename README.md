@@ -27,4 +27,5 @@
                 pureComponents实现原理
                 高阶函数&高阶组件
                 Portal
+                错误边界Error Boundaries
         3.ES6 class
