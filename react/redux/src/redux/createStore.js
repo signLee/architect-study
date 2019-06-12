@@ -31,7 +31,15 @@ export default function createStore(reducer, preLoadState) {
   }
   //订阅者
   function subscribe(listener) {
+    let subscribed = true
     currentListener.push(listener)
+    //返回一个取消订阅函数
+    return function unsubscribe() {
+      if (!subscribed) return
+      const index = currentListener.indexOf(listener)
+      currentListener.splice(index, 1) //如果执行取消订阅就从订阅列表去删除当前订阅者
+      subscribed = false
+    }
   }
   dispatch({ type: ActionTypes.INIT }) //初始化的时候执行一次获取state
   return {

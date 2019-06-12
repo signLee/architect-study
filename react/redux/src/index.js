@@ -26,7 +26,11 @@ function render() {
   counterValue.innerHTML = store.getState() //获取state的值
 }
 render()
-store.subscribe(render) //订阅数据更新并传入回调函数
+let unsubscribe = store.subscribe(render) //订阅数据更新并传入回调函数,返回值是一个取消订阅的函数
+
+setTimeout(() => {
+  unsubscribe()
+}, 3000)
 
 increcement.addEventListener("click", function() {
   store.dispatch({
