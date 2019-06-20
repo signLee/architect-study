@@ -1,5 +1,5 @@
 import createStore from "../redux/createStore"
-import reducer from "./reducer"
-let store = createStore(reducer, 0)
+import reducers from "./reducers"
+let store = createStore(reducers, { counter: 5, counter1: 10, counter2: 0 })
 
 export default store
