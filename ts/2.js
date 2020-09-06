@@ -1,4 +1,3 @@
-"use strict";
 //类型推论
 var name1 = 'sign'; //默认没有指定类型的话ts会根据赋予的值进行推断数据类型
 // name1 = 12//将number型数据复制给string数据，会报错

@@ -1,4 +1,3 @@
-"use strict";
 //基本数据类型
 var name2 = 'zhufeng';
 var age = 22;
