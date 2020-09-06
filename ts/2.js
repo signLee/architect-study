@@ -22,7 +22,7 @@ name4 = 12;
 function getName2(val) {
     val.toFixed(2); //强行指定这里的val为string boolean nubmer中的一个如果不指定的话这里会取这里默认类型的共有方法
 }
-//字面量的联合
+//类型的联合&字面量的联合
 var grade = 10;
 // grade = 3//3不在1 2 10里会报错
 grade = 2; //可以
