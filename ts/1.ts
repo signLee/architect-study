@@ -1,0 +1,1 @@
+let name2:string = 'zhufeng'
