@@ -40,7 +40,7 @@ let p4 = new Person4(2)
 console.log(p4.id)
 // p4.id = 1 // 不可修改，会报错
 
-//参数的属性  public   private  protected
+//访问控制修饰符  public   private  protected
 
 class Parent{
   public name:string;//public 共有属性  都可以访问，也可以通过new出来的实例访问

@@ -56,7 +56,7 @@ var Person4 = /** @class */ (function () {
 var p4 = new Person4(2);
 console.log(p4.id);
 // p4.id = 1 // 不可修改，会报错
-//参数的属性  public   private  protected
+//访问控制修饰符  public   private  protected
 var Parent = /** @class */ (function () {
     function Parent(name, age, money) {
         this.name = name;
