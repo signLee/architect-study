@@ -40,7 +40,7 @@ function double(val:string):string;
 function double(val:number):number;
 function double(val:boolean):boolean;
 
-function double (val:any):any {
+function double (val:myType):myType {
   if(typeof val === 'string'){
     return val+val
   }else if(typeof val === 'number'){
