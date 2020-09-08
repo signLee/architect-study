@@ -11,7 +11,7 @@ createArray<string>(3,'x')
 
 
 //类数组IArguments
-function sum(...args:number[]){
+function sum2(...args:number[]){
   let res:number = 0 ;
   let arg:IArguments = arguments
   for(let i =0;i<arg.length;i++){
@@ -19,7 +19,7 @@ function sum(...args:number[]){
   }
   return res
 }
-sum(1,2,3)
+sum2(1,2,3)
 
 //泛型类，在类中使用泛型
 class MyArray<T>{
@@ -73,3 +73,20 @@ function logger<T extends LengthWise>(val:T){
   console.log(val.length)
 }
 logger('sdf')
+
+// 泛型类型的别名
+type Cart<T> = {list:T[]}|T[]
+let car:Cart<string> = ['a','3','c']
+let car1:Cart<string>= {list: ['a','3','c']}
+
+// 泛型接口与泛型类型别名的区别与联系
+// 1.接口会创建一个新的名称，别名不会
+// 2.别名不能被继承和实现，别名一般用于多个类型的联合取值（A|B）
+interface A{}
+interface B{}
+
+type A1 = A|B
+type A2 = A
+// type A3 extends A //报错
+class Aperson implements A,B{}
+// class Aperson1 implements A1{}// 不能被实现

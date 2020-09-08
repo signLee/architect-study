@@ -8,7 +8,7 @@ function createArray(length, val) {
 }
 createArray(3, 'x');
 //类数组IArguments
-function sum() {
+function sum2() {
     var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
         args[_i] = arguments[_i];
@@ -20,7 +20,7 @@ function sum() {
     }
     return res;
 }
-sum(1, 2, 3);
+sum2(1, 2, 3);
 //泛型类，在类中使用泛型
 var MyArray = /** @class */ (function () {
     function MyArray() {
@@ -70,3 +70,12 @@ function logger(val) {
     console.log(val.length);
 }
 logger('sdf');
+var car = ['a', '3', 'c'];
+var car1 = { list: ['a', '3', 'c'] };
+// type A3 extends A //报错
+var Aperson = /** @class */ (function () {
+    function Aperson() {
+    }
+    return Aperson;
+}());
+// class Aperson1 implements A1{}// 不能被实现
