@@ -4,6 +4,7 @@
 /react/redux/node_modules
 /.pnp
 .pnp.js
+/ts-vue-todo/ts-vue-todo/node_modules
 
 # testing
 /coverage

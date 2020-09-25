@@ -20,16 +20,22 @@ export default class Vote extends React.Component {
 
   addOne = type => {
     // setState的执行类似于一个异步执行队列，只有当所有setState队列里的方法都执行完成后才会触发回调
-    // this.setState({ m: this.state.m + 1 })
-    // console.log(this.state.m) //0
-    // this.setState({ m: this.state.m + 1 })
-    // console.log(this.state.m) //0开始执行的时候m的值并未发生改变，相当于同时开了两个异步请求，这时请求的初始值m都还是原来的值
     this.setState({ m: this.state.m + 1 })
-    this.setState({ m: this.state.m + 1 }, () => {
-      console.log(this.state.m) //1这里的回调是最后执行的
+    console.log(this.state.m) //0
+    this.setState({ m: this.state.m + 1 })
+    console.log(this.state.m) //0开始执行的时候m的值并未发生改变，相当于同时开了两个异步请求，这时请求的初始值m都还是原来的值
+    setTimeout(()=>{
+      this.setState({ m: this.state.m + 1 })
+      console.log(this.state.m)//2批量更新已经完成 这里的修改会同步执行,setState在promise,setTimeou,setInterval中都是同步执行
+      this.setState({ m: this.state.m + 1 })
+      console.log(this.state.m)//3
     })
-    console.log(this.state.m) //0
-    console.log(this.state.m) //0
+    // this.setState({ m: this.state.m + 1 })
+    // this.setState({ m: this.state.m + 1 }, () => {
+    //   console.log(this.state.m) //1这里的回调是最后执行的
+    // })
+    // console.log(this.state.m) //0
+    // console.log(this.state.m) //0
   }
   render() {
     return (
