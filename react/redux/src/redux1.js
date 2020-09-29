@@ -16,7 +16,7 @@ function reducer(state = initState, action) {
   }
 }
 
-let store = createStore(reducer,preloadedstate)//preloadedstate 初始状态
+let store = createStore(reducer,initState)//initState 初始状态
 let counterValue = document.getElementById("counter-value")
 let increcement = document.getElementById("increcement")
 let decrecement = document.getElementById("decrecement")
