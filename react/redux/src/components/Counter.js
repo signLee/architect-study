@@ -6,11 +6,11 @@ import actions from "../store/actions/counter"
 let bindActions = bindActionCreators(actions, store.dispatch) // 所有已包装好的函数
 
 export default class Counter extends Component {
-  state = { number: store.getState().counter } //初始化的时候用store中的值
+  state = { number: store.getState().counter.test } //初始化的时候用store中的值
   componentDidMount() {
     // 通知订阅函数执行
     this.unSubscribe = store.subscribe(() => {
-      this.setState({ number: store.getState().counter }) // 操作的是store中的值 设置的时候仍然用store中的值 类似于vuex中使用和操作的都是store中的值  只不过这里用state转了一下
+      this.setState({ number: store.getState().counter.test }) // 操作的是store中的值 设置的时候仍然用store中的值 类似于vuex中使用和操作的都是store中的值  只不过这里用state转了一下
     })
   }
   componentWillUnmount() {
