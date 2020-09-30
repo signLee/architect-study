@@ -1,12 +1,13 @@
 #
 
     架构学习
-        1.promise
+        ES6 class
+        promise
             高阶函数
             实现一个自己的promise
             generator
             async await
-        2.react
+        react
             jsx语法基础
             jsx实现原理
             react基础
@@ -28,5 +29,6 @@
                 高阶函数&高阶组件
                 Portal
                 错误边界Error Boundaries
-        3.ES6 class
-        4.redux&实现原理
+                redux&实现原理
+                react-redux实现原理
+       ts
