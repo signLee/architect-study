@@ -24,3 +24,4 @@ function compose(...funcs){
 }
 let result = compose(add1,add2,add3)('sign')// 123sign
 console.log(result)
+export default compose

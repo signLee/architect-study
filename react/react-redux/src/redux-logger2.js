@@ -4,11 +4,11 @@
 //   console.log('新状态2',store.getState());
 // }
 
-let logger = function({getState,dispatch}){
-  return function(dispatch){
+let logger = function({getState}){
+  return function(next){
     return function(action){
       console.log('老状态2',getState());
-      dispatch(action)
+      next(action)
       console.log('新状态2',getState());
     }
   }

@@ -6,7 +6,7 @@ export default function applyMiddleware(...middlewares){
       let store = createStore(reducer)//原始的仓库
       let dispatch = ()=>{throw Error('现在还不能用')}
       let middlewareApi = {
-        getState : store.getState(),
+        getState : store.getState,
         dispatch: (...args)=>dispatch(args)
       }
       const chain = middlewares.map(middleware=>middleware(middlewareApi))
