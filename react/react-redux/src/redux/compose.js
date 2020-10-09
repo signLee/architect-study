@@ -8,17 +8,13 @@ function add3(str){
   return '3' + str 
 }
 function compose(...funcs){
-  let result ;
   if (funcs.length===0){
     return args=>args
   }
   if (funcs.length===1){
     return funcs[0]
   }
-  return funcs.reduce((a,b)=>{
-    debugger
-    return (...args)=>a(b(...args))
-  })
+  return funcs.reduce((a,b)=>(...args)=>a(b(...args)))
 
   // 执行顺序
   // 第一次： add1 和 add2 执行完成后返回 (...args)=>add1(add2(...args))
