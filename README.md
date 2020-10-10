@@ -31,5 +31,7 @@
                 错误边界Error Boundaries
                 redux&实现原理
                 react-redux实现原理
-                react-middleware原理
+                redux-middleware原理
+                redux-thunk
+                redux-promise
        ts

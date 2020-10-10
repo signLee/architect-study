@@ -9,6 +9,7 @@ import {connect} from '../react-redux'
         <p>{this.props.number}</p>
         <button onClick={this.props.increment}>+</button>
         <button onClick={this.props.decrement}>-</button>
+        <button onClick={this.props.asyncIncrement}>延迟一秒加1</button>
       </>
     )
   }
