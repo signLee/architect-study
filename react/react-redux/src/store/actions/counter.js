@@ -13,5 +13,20 @@ export default {
         dispatch({ type: types.INCREMENT, payload:amount })
       },1000)
     }
+  },
+  promiseIncrement(){
+    return {
+      type:types.INCREMENT,
+      payload:new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          let result = Math.random()
+          if(result>0.2){
+            resolve({number:result})
+          }else{
+            reject({number:result})
+          }
+        },1000)
+      })
+    }
   }
 }
