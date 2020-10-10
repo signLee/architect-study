@@ -9,7 +9,7 @@ export default function applyMiddleware(...middlewares){
         getState : store.getState,
         dispatch: (...args)=>dispatch(args)
       }
-      const chain = middlewares.map(middleware=>middleware(middlewareApi))
+      const chain = middlewares.map(middleware=>middleware(middlewareApi)) 
       dispatch = compose(...chain)(store.dispatch)//传入老的dispatch进行包装后返回，对应logger的第一个返回的函数
       return {
         ...store,
