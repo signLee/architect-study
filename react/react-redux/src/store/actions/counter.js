@@ -8,9 +8,9 @@ export default {
     return { type: types.DECREMENT }
   },
   asyncIncrement(){
-    return function(dispatch,getState){
+    return function(dispatch,getState,amount){
       setTimeout(()=>{
-        dispatch({ type: types.INCREMENT })
+        dispatch({ type: types.INCREMENT, payload:amount })
       },1000)
     }
   }
