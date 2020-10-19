@@ -9,6 +9,7 @@ class Counter extends Component {
         <p>{this.props.number}</p>
         <button onClick={this.props.increment}>+</button>
         <button onClick={this.props.decrement}>-</button>
+        <button onClick={this.props.goHome}>去首页</button>
       </div>
     );
   }
