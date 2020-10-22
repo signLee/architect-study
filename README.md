@@ -34,4 +34,9 @@
                 redux-middleware原理
                 redux-thunk
                 redux-promise
+                react-router
+                connected-react-router
+                redux-persist持久化
+                redux-saga
+                react-hooks
        ts

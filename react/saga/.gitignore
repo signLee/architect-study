@@ -1,12 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/react/redux/node_modules
+/node_modules
 /.pnp
 .pnp.js
-/ts-vue-todo/ts-vue-todo/node_modules
-/react/connected-react-router/node_modules
-/react/saga/node_modules
+
 # testing
 /coverage
 
