@@ -6,3 +6,9 @@ export const delay =function(ms){
     },ms)
   })
 }
+
+export const readFile = function(filename,callback){
+  setTimeout(()=>{
+    callback(null,filename+'s content')
+  },1000)
+}
