@@ -1,6 +1,6 @@
 
 import * as types from '../action-types'
-import {put,takeEvery,call} from 'redux-saga/effects'
+import {put,takeEvery,call,take} from 'redux-saga/effects'
 import {delay} from '../utils'
 console.log(delay)
 function* incrementAsync(){
@@ -12,6 +12,10 @@ function* incrementAsync(){
 }
 
 export default function* watchIncrementAsync(){
-  // 监听每一次的ASYNC_INCREMENT的派发，并执行incrementAsync
-  yield takeEvery(types.ASYNC_INCREMENT,incrementAsync)
+  // takeEvery监听每一次的ASYNC_INCREMENT的派发，并执行incrementAsync
+  // yield takeEvery(types.ASYNC_INCREMENT,incrementAsync)
+  // take监听一次ASYNC_INCREMENT动作如果有人向仓库派发了ASYNC_INCREMENT动作，向下继续执行
+  const action = yield take(types.ASYNC_INCREMENT)
+  console.log(action);
+  yield put({type:types.INCREMENT})
 }
