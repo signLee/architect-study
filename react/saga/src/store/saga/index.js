@@ -1,6 +1,7 @@
 import {all,call,cps,select, take} from 'redux-saga/effects'
 import watchIncrementAsync from './watchIncrementAsync'
 import helloSaga from './helloSaga'
+import loginSaga from './loginSaga'
 import { readFile } from '../utils';
 
 export function* readAsync(){
@@ -23,6 +24,7 @@ export default function* rootSaga(){
   yield all([
     helloSaga(),
     watchIncrementAsync(),
-    readAsync()
+    readAsync(),
+    loginSaga()
   ])
 }

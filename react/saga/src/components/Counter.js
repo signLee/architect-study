@@ -14,6 +14,6 @@ class Counter extends Component {
 }
 
 export default connect(
-  state=>state.counter1,
+  state=>state.counter,
   actions
 )(Counter);
