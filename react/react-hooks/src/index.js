@@ -1,4 +1,4 @@
-import React,{useState,useReducer} from 'react';
+import React,{useState,useReducer,useContext,createContext} from 'react';
 import ReactDOM from 'react-dom';
 
 function Counter(){
@@ -46,8 +46,27 @@ function Counter2(){
   )
 }
 
+function SubCounter(){
+  const {state,dispatch} = useContext(CounterContext)// 当前context的值由上层组件中距离当前组件最近的Context.Provider的value props决定
+  return (
+    <> 
+      <p>{state.number}</p>
+      <button onClick={()=>dispatch({type:'ADD'})}>+</button>
+    </>
+  )
+}
+const CounterContext = createContext()
+function Counter3(){
+  const [state,dispatch] = useReducer((reducer),initState,()=>initState)
+  return (
+    <CounterContext.Provider value={{state,dispatch}}>
+      <SubCounter></SubCounter>
+    </CounterContext.Provider>
+  )
+}
+
 ReactDOM.render(
-    <Counter2></Counter2>,
+    <Counter3></Counter3>,
   document.getElementById('root')
 );
 
