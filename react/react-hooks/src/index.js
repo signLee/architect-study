@@ -1,29 +1,49 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,createRef,useRef,forwardRef,useImperativeHandle} from 'react';
 import ReactDOM from 'react-dom';
 
-function Counter(){
-  let [number,setNmuber] = useState(0)//使用了useState后可以在函数式组件里存储state状态
-  // useEffect在每次渲染完成后执行 相当于类组件的componentDidUpdate和componentDidMounted之后
-  useEffect(()=>{
-    document.title =`一共点击了${number}次`
-    const timer = setInterval(()=>{
-      setNmuber(number+1)
-    },1000)
-    return ()=>{
-      clearInterval(timer)//副作用函数可以通过返回一个函数来指定如何清除副作用
+
+function Child(props,parentRef){
+  const inputRef = useRef()
+  const inputRef1 = useRef()
+  //之所以用useImperativeHandle 是为了防止其他的DOM非常规的操作，用了useImperativeHandle后只返回可用部分
+  useImperativeHandle(parentRef,()=>{
+    // 这里return 后返回的是parentRef.current
+    return {
+      focus1(){
+        inputRef.current.focus()
+      },
+      changeText(){
+        inputRef1.current.value = 'asjdfllkj'
+      }
     }
   })
   return (
     <>
-      <p>{number}</p>
-      <button onClick={()=>setNmuber(number+1)}>+</button>
+      <input ref={inputRef}/>
+      <input ref={inputRef1}/>
+     
+    </>
+  )
+}
+let ForwardChild = forwardRef(Child)//函数式组件要抓取时需要使用forwardRef
+
+
+function Parent(){
+  const parentRef = useRef()
+  function getFocus(){
+    parentRef.current.focus1()//parentRef.current取到的是useImperativeHandle的返回值
+    parentRef.current.changeText()
+  }
+  return (
+    <>
+      <ForwardChild ref={parentRef}/>
+      <button onClick={getFocus}>获取焦点</button>
     </>
   )
 }
 
-
 ReactDOM.render(
-    <Counter></Counter>,
+    <Parent></Parent>,
   document.getElementById('root')
 );
 
